@@ -1,5 +1,0 @@
-- [ ] Khảo sát code: pipeline sub/dịch/TTS
-- [ ] Thiết kế cấu hình: target `vi`
-- [ ] Dịch SRT/ASS và burn-in OCR
-- [ ] Tạo TTS thuyết minh tiếng Việt
-- [ ] Cập nhật CLI/docs và kiểm thử
