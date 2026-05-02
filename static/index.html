@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1200" />
@@ -587,12 +587,12 @@
         <div class="slogan">AI Video Translation & Dubbing by Krillin AI</div>
         <div class="nav">
           <button class="nav-btn active" id="nav-workbench">
-            工作台 Dashboard
+            Bảng Điều Khiển
           </button>
           <button class="nav-btn" id="nav-llm-config">
-            LLM 配置 LLM Config
+            Cấu Hình LLM
           </button>
-          <button class="nav-btn" id="nav-config">设置 Settings</button>
+          <button class="nav-btn" id="nav-config">Cài Đặt</button>
         </div>
         <div class="sidebar-bottom">
           <span style="font-size: 13px; color: #94a3b8">v1.0</span>
@@ -610,38 +610,37 @@
                 margin: 0 0 32px 0;
               "
             >
-              视频翻译配音<br />
-              Video Translation & Dubbing
+              Dịch Phụ Đề &amp; Lồng Tiếng Video
             </h1>
 
             <!-- 视频输入区域 -->
             <div class="card">
-              <h3 class="card-title">1. 视频源设置 Video Source Settings</h3>
+              <h3 class="card-title">1. Cài Đặt Nguồn Video</h3>
               <div class="form-group">
                 <div class="radio-group">
                   <label class="radio-item">
                     <input type="radio" name="inputType" value="url" checked />
-                    <span>输入链接 Paste a link</span>
+                    <span>Dán liên kết</span>
                   </label>
                   <label class="radio-item">
                     <input type="radio" name="inputType" value="file" />
-                    <span>本地上传 Upload a file</span>
+                    <span>Tải lên tệp</span>
                   </label>
                 </div>
               </div>
 
               <div class="form-group" id="urlInputContainer">
-                <label class="form-label">视频地址 Video URL:</label>
+                <label class="form-label">URL Video:</label>
                 <input
                   type="url"
                   id="urlInput"
-                  placeholder="输入视频链接 Paste a link here"
+                  placeholder="Dán liên kết video vào đây"
                   class="form-input"
                 />
               </div>
 
               <div class="form-group hidden" id="fileInputContainer">
-                <label class="form-label">上传视频 Upload Video:</label>
+                <label class="form-label">Tải Lên Video:</label>
                 <input
                   type="file"
                   id="fileInput"
@@ -650,21 +649,21 @@
                   class="form-input"
                 />
                 <div id="uploadStatus" class="loading hidden">
-                  正在上传... Uploading...
+                  Đang tải lên...
                 </div>
               </div>
             </div>
 
             <!-- 字幕设置区域 -->
             <div class="card">
-              <h3 class="card-title">2. 字幕设置 Subtitle Settings</h3>
+              <h3 class="card-title">2. Cài Đặt Phụ Đề</h3>
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label"
-                    >源语言<br />Original Language:</label
+                    >Ngôn Ngữ Gốc:</label
                   >
                   <select id="source-language" class="form-select">
-                    <option value="zh_cn">简体中文</option>
+                    <option value="zh_cn">Tiếng Trung Giản thể</option>
                     <option value="en">English</option>
                     <option value="ja">日本語</option>
                     <option value="tr">Türkçe</option>
@@ -675,10 +674,10 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">翻译成<br />Translate To:</label>
+                  <label class="form-label">Dịch Sang:</label>
                   <select id="target-language" class="form-select">
-                    <option value="zh_cn">简体中文</option>
-                    <option value="zh_tw">繁體中文</option>
+                    <option value="zh_cn">Tiếng Trung Giản thể</option>
+                    <option value="zh_tw">Tiếng Trung Phồn thể</option>
                     <option value="en">English</option>
                     <option value="ja">日本語</option>
                     <option value="id">bahasa Indonesia</option>
@@ -785,38 +784,38 @@
               <div class="form-group">
                 <label class="checkbox-item">
                   <input type="checkbox" id="bilingual-toggle" checked />
-                  <span>启用双语字幕 Bilingual Subtitles</span>
+                  <span>Bật Phụ Đề Song Ngữ</span>
                 </label>
                 <select
                   id="bilingual-position"
                   class="form-select"
                   style="width: 200px; margin-left: 16px"
                 >
-                  <option value="top">翻译在上 Translation Above</option>
-                  <option value="bottom">翻译在下 Translation Below</option>
+                  <option value="top">Bản dịch ở trên</option>
+                  <option value="bottom">Bản dịch ở dưới</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label class="checkbox-item">
                   <input type="checkbox" id="filler-filter-toggle" checked />
-                  <span>启用语气词过滤 Tone Word Filtering</span>
+                  <span>Bật Lọc Từ Ngữ Khí</span>
                 </label>
               </div>
             </div>
 
             <!-- 配音设置区域 -->
             <div class="card">
-              <h3 class="card-title">3. 配音设置 Dubbing Settings</h3>
+              <h3 class="card-title">3. Cài Đặt Lồng Tiếng</h3>
               <div class="form-group">
                 <label class="checkbox-item">
                   <input type="checkbox" id="voiceover-toggle" />
-                  <span>启用配音 Apply Dubbing</span>
+                  <span>Bật Lồng Tiếng</span>
                 </label>
                 <input
                   type="text"
                   id="voiceover-voice"
-                  placeholder="输入声音代码 Enter Voice Code"
+                  placeholder="Nhập Mã Giọng Nói"
                   class="form-input"
                   style="width: 200px; margin-left: 16px"
                   disabled
@@ -824,7 +823,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >选择音色克隆样本<br />Select Voice Clone Sample:</label
+                  >Chọn Mẫu Nhân Bản Giọng Nói:</label
                 >
                 <input
                   type="file"
@@ -839,11 +838,11 @@
 
             <!-- 视频合成设置 -->
             <div class="card">
-              <h3 class="card-title">4. 视频合成设置 Composition Settings</h3>
+              <h3 class="card-title">4. Cài Đặt Tổng Hợp Video</h3>
               <div class="form-group">
                 <label class="checkbox-item">
                   <input type="checkbox" id="embed-subtitle-toggle" />
-                  <span>合成 Composite</span>
+                  <span>Tổng Hợp</span>
                 </label>
                 <select
                   id="embed-subtitle"
@@ -852,28 +851,28 @@
                   disabled
                 >
                   <option value="horizontal">
-                    横屏输出 Landscape（16：9）
+                    Màn hình ngang (16:9)
                   </option>
-                  <option value="vertical">竖屏输出 Portrait（9:16）</option>
-                  <option value="all">横屏+竖屏 (Landscape+Portrait)</option>
+                  <option value="vertical">Màn hình dọc (9:16)</option>
+                  <option value="all">Ngang + Dọc</option>
                 </select>
               </div>
               <div id="subtitle-text-inputs" class="hidden">
                 <div class="form-group">
-                  <label class="form-label">主标题 Main Title:</label>
+                  <label class="form-label">Tiêu Đề Chính:</label>
                   <input
                     type="text"
                     id="subtitle-text-1"
-                    placeholder="请输入竖屏视频主标题 Please enter main title for vertical video"
+                    placeholder="Nhập tiêu đề chính cho video dọc"
                     class="form-input"
                   />
                 </div>
                 <div class="form-group">
-                  <label class="form-label">副标题 Subtitle:</label>
+                  <label class="form-label">Phụ Đề:</label>
                   <input
                     type="text"
                     id="subtitle-text-2"
-                    placeholder="请输入竖屏视频副标题 Please enter subtitle for vertical video"
+                    placeholder="Nhập phụ đề cho video dọc"
                     class="form-input"
                   />
                 </div>
@@ -883,13 +882,13 @@
             <!-- 执行按钮 -->
             <div class="action-area">
               <button type="button" id="executeButton" class="btn-primary">
-                开始翻译 Start Translating
+                Bắt Đầu Dịch
               </button>
             </div>
 
             <!-- 进度区域 -->
             <div id="progressSection" class="progress-section hidden">
-              <h4>任务进度 Task Progress</h4>
+              <h4>Tiến Độ Tác Vụ</h4>
               <div class="progress-bar">
                 <div class="progress-fill" id="progressBar">0%</div>
               </div>
@@ -898,21 +897,21 @@
           </div>
           <div id="llm-config" style="display: none">
             <div class="card">
-              <h3 class="card-title">API 供应商</h3>
-              <p class="card-subtitle">点击下方卡片快速跳转到对应平台购买API</p>
+              <h3 class="card-title">Nhà Cung Cấp API</h3>
+              <p class="card-subtitle">Nhấp vào thẻ bên dưới để chuyển đến nền tảng mua API tương ứng</p>
 
               <div class="provider-grid">
                 <div class="provider-card qwen" id="provider-qwen">
                   <div class="provider-icon">
                     <img
                       src="./source/qwen-color.svg"
-                      alt="通义千问"
+                      alt="Thông Nghĩa Thiên Vấn"
                       width="24"
                       height="24"
                     />
                   </div>
-                  <div class="provider-name">通义千问 Qwen</div>
-                  <div class="provider-desc">阿里云大模型服务</div>
+                  <div class="provider-name">Qwen (Thông Nghĩa Thiên Vấn)</div>
+                  <div class="provider-desc">Dịch vụ mô hình lớn Alibaba Cloud</div>
                 </div>
 
                 <div class="provider-card openai" id="provider-openai">
@@ -925,7 +924,7 @@
                     />
                   </div>
                   <div class="provider-name">OpenAI</div>
-                  <div class="provider-desc">GPT模型API服务</div>
+                  <div class="provider-desc">Dịch vụ API mô hình GPT</div>
                 </div>
 
                 <div class="provider-card deepseek" id="provider-deepseek">
@@ -938,22 +937,22 @@
                     />
                   </div>
                   <div class="provider-name">DeepSeek</div>
-                  <div class="provider-desc">高性价比AI模型</div>
+                  <div class="provider-desc">Mô hình AI tiết kiệm chi phí</div>
                 </div>
 
                 <div class="provider-card add" id="provider-add">
                   <div class="provider-icon">
                     <span style="font-size: 20px; line-height: 24px">＋</span>
                   </div>
-                  <div class="provider-name">新增</div>
-                  <div class="provider-desc">添加自定义供应商</div>
+                  <div class="provider-name">Thêm Mới</div>
+                  <div class="provider-desc">Thêm nhà cung cấp tùy chỉnh</div>
                 </div>
               </div>
             </div>
 
             <!-- LLM 配置 -->
             <div class="card">
-              <h3 class="card-title">LLM 配置 LLM Config</h3>
+              <h3 class="card-title">Cấu Hình LLM</h3>
               <div class="form-group">
                 <label class="form-label">API Base URL:</label>
                 <input
@@ -973,7 +972,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">模型名称 Model name:</label>
+                <label class="form-label">Tên Mô Hình:</label>
                 <input
                   type="text"
                   id="llm-model"
@@ -982,24 +981,24 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">支持模型 Supported models:</label>
+                <label class="form-label">Mô Hình Được Hỗ Trợ:</label>
                 <select id="llm-model-suggest" class="form-select">
-                  <option value="">请选择或手动输入</option>
+                  <option value="">Chọn hoặc nhập thủ công</option>
                 </select>
               </div>
             </div>
 
             <!-- 使用指南 -->
             <div class="card">
-              <h3 class="card-title">使用指南</h3>
-              <p class="card-subtitle">LLM API配置说明（可复制文本）</p>
+              <h3 class="card-title">Hướng Dẫn Sử Dụng</h3>
+              <p class="card-subtitle">Hướng dẫn cấu hình LLM API (có thể sao chép văn bản)</p>
 
               <div class="guide-content">
                 <h4>1. API Base URL：</h4>
                 <ul>
-                  <li>OpenAI官方：<code>https://api.openai.com/v1</code></li>
+                  <li>OpenAI chính thức：<code>https://api.openai.com/v1</code></li>
                   <li>
-                    阿里云百炼：<code
+                    Alibaba Cloud Bailian：<code
                       >https://dashscope.aliyuncs.com/compatible-mode/v1</code
                     >
                   </li>
@@ -1008,21 +1007,21 @@
 
                 <h4>2. API Key：</h4>
                 <ul>
-                  <li>在对应平台的控制台中获取</li>
-                  <li>请妥善保管，避免泄露</li>
+                  <li>Lấy từ bảng điều khiển của nền tảng tương ứng</li>
+                  <li>Vui lòng giữ cẩn thận, tránh rò rỉ</li>
                 </ul>
 
-                <h4>3. 模型名称：</h4>
+                <h4>3. Tên mô hình：</h4>
                 <ul>
                   <li>OpenAI：gpt-3.5-turbo, gpt-4, gpt-4-turbo...</li>
-                  <li>阿里云：qwen-turbo, qwen-plus, qwen-max...</li>
+                  <li>Alibaba Cloud：qwen-turbo, qwen-plus, qwen-max...</li>
                   <li>DeepSeek：deepseek-chat, deepseek-coder...</li>
                 </ul>
 
-                <h4>4. 使用建议：</h4>
+                <h4>4. Khuyến nghị sử dụng：</h4>
                 <ul>
-                  <li>根据实际需求选择合适的模型</li>
-                  <li>注意API调用费用</li>
+                  <li>Chọn mô hình phù hợp theo nhu cầu thực tế</li>
+                  <li>Lưu ý chi phí gọi API</li>
                 </ul>
               </div>
             </div>
@@ -1037,15 +1036,15 @@
                 margin: 0 0 32px 0;
               "
             >
-              应用配置 Application Configuration
+              Cấu Hình Ứng Dụng
             </h1>
 
             <!-- 应用配置 -->
             <div class="card">
-              <h3 class="card-title">应用配置 App Config</h3>
+              <h3 class="card-title">Cấu Hình Ứng Dụng</h3>
               <div class="form-group">
                 <label class="form-label"
-                  >分段处理时长(分钟) Segment duration (minutes):</label
+                  >Thời lượng xử lý phân đoạn (phút):</label
                 >
                 <input
                   type="number"
@@ -1058,7 +1057,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >转录最大并行数量 Transcribe parallel num:</label
+                  >Số lượng song song tối đa chuyển đổi giọng nói:</label
                 >
                 <input
                   type="number"
@@ -1071,7 +1070,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >翻译最大并行数量 Translate parallel num:</label
+                  >Số lượng song song tối đa dịch thuật:</label
                 >
                 <input
                   type="number"
@@ -1084,7 +1083,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >转录最大尝试次数 Transcribe max attempts:</label
+                  >Số lần thử tối đa chuyển đổi giọng nói:</label
                 >
                 <input
                   type="number"
@@ -1097,7 +1096,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >翻译最大尝试次数 Translate max attempts:</label
+                  >Số lần thử tối đa dịch thuật:</label
                 >
                 <input
                   type="number"
@@ -1110,7 +1109,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >每个句子最大字符数 Max sentence length:</label
+                  >Độ dài câu tối đa:</label
                 >
                 <input
                   type="number"
@@ -1122,7 +1121,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">网络代理地址 proxy:</label>
+                <label class="form-label">Địa chỉ proxy:</label>
                 <input
                   type="text"
                   id="proxy"
@@ -1134,9 +1133,9 @@
 
             <!-- 服务器配置 -->
             <div class="card">
-              <h3 class="card-title">服务器配置 Server Config</h3>
+              <h3 class="card-title">Cấu Hình Máy Chủ</h3>
               <div class="form-group">
-                <label class="form-label">服务器地址 Server address:</label>
+                <label class="form-label">Địa chỉ máy chủ:</label>
                 <input
                   type="text"
                   id="server-host"
@@ -1145,7 +1144,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">服务器端口 Server port:</label>
+                <label class="form-label">Cổng máy chủ:</label>
                 <input
                   type="number"
                   id="server-port"
@@ -1191,27 +1190,27 @@
 
             <!-- 语音识别配置 -->
             <div class="card">
-              <h3 class="card-title">语音识别配置 Transcribe Config</h3>
+              <h3 class="card-title">Cấu Hình Nhận Dạng Giọng Nói</h3>
               <div class="form-group">
-                <label class="form-label">提供商 Provider:</label>
+                <label class="form-label">Nhà Cung Cấp:</label>
                 <select id="transcribe-provider" class="form-select">
                   <option value="openai">OpenAI</option>
                   <option value="fasterwhisper">FasterWhisper</option>
                   <option value="whisperkit">WhisperKit</option>
                   <option value="whispercpp">WhisperCpp</option>
-                  <option value="aliyun">阿里云</option>
+                  <option value="aliyun">Alibaba Cloud</option>
                 </select>
               </div>
               <div class="form-group">
                 <label class="form-label">
-                  GPU加速 Enable Gpu Acceleration
+                  Tăng Tốc GPU
                   <span class="hint"
-                    >仅 FasterWhisper 生效(Only FasterWhisper)</span
+                    >Chỉ áp dụng cho FasterWhisper</span
                   >
                 </label>
                 <select id="gpu-acceleration" class="form-select">
-                  <option value="true">是 Yes</option>
-                  <option value="false">否 No</option>
+                  <option value="true">Có</option>
+                  <option value="false">Không</option>
                 </select>
               </div>
               <div class="form-group">
@@ -1233,7 +1232,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">OpenAI 模型 Model:</label>
+                <label class="form-label">Mô Hình OpenAI:</label>
                 <input
                   type="text"
                   id="openai-model"
@@ -1242,7 +1241,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">FasterWhisper 模型 Model:</label>
+                <label class="form-label">Mô Hình FasterWhisper:</label>
                 <input
                   type="text"
                   id="fasterwhisper-model"
@@ -1251,7 +1250,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">WhisperKit 模型 Model:</label>
+                <label class="form-label">Mô Hình WhisperKit:</label>
                 <input
                   type="text"
                   id="whisperkit-model"
@@ -1260,7 +1259,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">WhisperCpp 模型 Model:</label>
+                <label class="form-label">Mô Hình WhisperCpp:</label>
                 <input
                   type="text"
                   id="whispercpp-model"
@@ -1270,7 +1269,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun OSS Access Key ID:</label
+                  >Alibaba Cloud Aliyun OSS Access Key ID:</label
                 >
                 <input
                   type="text"
@@ -1281,7 +1280,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun OSS Access Key Secret:</label
+                  >Alibaba Cloud Aliyun OSS Access Key Secret:</label
                 >
                 <input
                   type="password"
@@ -1291,7 +1290,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">阿里云 Aliyun OSS Bucket Name:</label>
+                <label class="form-label">Alibaba Cloud Aliyun OSS Tên Bucket:</label>
                 <input
                   type="text"
                   id="aliyun-oss-bucket"
@@ -1301,7 +1300,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云语音 Aliyun Speech Access Key ID:</label
+                  >Alibaba Cloud Aliyun Speech Access Key ID:</label
                 >
                 <input
                   type="text"
@@ -1312,7 +1311,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云语音 Aliyun Speech Access Key Secret:</label
+                  >Alibaba Cloud Aliyun Speech Access Key Secret:</label
                 >
                 <input
                   type="password"
@@ -1323,7 +1322,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云语音 Aliyun Speech App Key:</label
+                  >Alibaba Cloud Aliyun Speech App Key:</label
                 >
                 <input
                   type="text"
@@ -1336,12 +1335,12 @@
 
             <!-- TTS配置 -->
             <div class="card">
-              <h3 class="card-title">文本转语音配置 TTS Config</h3>
+              <h3 class="card-title">Cấu Hình TTS</h3>
               <div class="form-group">
-                <label class="form-label">提供商 Provider:</label>
+                <label class="form-label">Nhà Cung Cấp:</label>
                 <select id="tts-provider" class="form-select">
                   <option value="openai">OpenAI</option>
-                  <option value="aliyun">阿里云</option>
+                  <option value="aliyun">Alibaba Cloud</option>
                   <option value="edge-tts">Edge TTS</option>
                 </select>
               </div>
@@ -1364,7 +1363,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">OpenAI 模型 Model:</label>
+                <label class="form-label">Mô Hình OpenAI:</label>
                 <input
                   type="text"
                   id="tts-openai-model"
@@ -1374,7 +1373,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun OSS Access Key ID:</label
+                  >Alibaba Cloud Aliyun OSS Access Key ID:</label
                 >
                 <input
                   type="text"
@@ -1385,7 +1384,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun OSS Access Key Secret:</label
+                  >Alibaba Cloud Aliyun OSS Access Key Secret:</label
                 >
                 <input
                   type="password"
@@ -1395,7 +1394,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">阿里云 Aliyun OSS Bucket:</label>
+                <label class="form-label">Alibaba Cloud Aliyun OSS Bucket:</label>
                 <input
                   type="text"
                   id="tts-aliyun-oss-bucket"
@@ -1405,7 +1404,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun Speech Access Key ID:</label
+                  >Alibaba Cloud Aliyun Speech Access Key ID:</label
                 >
                 <input
                   type="text"
@@ -1416,7 +1415,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label"
-                  >阿里云 Aliyun Speech Access Key Secret:</label
+                  >Alibaba Cloud Aliyun Speech Access Key Secret:</label
                 >
                 <input
                   type="password"
@@ -1426,7 +1425,7 @@
                 />
               </div>
               <div class="form-group">
-                <label class="form-label">阿里云 Aliyun Speech App Key:</label>
+                <label class="form-label">Alibaba Cloud Aliyun Speech App Key:</label>
                 <input
                   type="text"
                   id="tts-aliyun-speech-app-key"
@@ -1439,17 +1438,17 @@
             <!-- 保存按钮 -->
             <div class="action-area">
               <button type="button" id="saveConfigButton" class="btn-primary">
-                保存配置 Save Configuration
+                Lưu Cấu Hình
               </button>
             </div>
           </div>
         </div>
-        <div class="status-bar" id="status-bar">就绪 Ready</div>
+        <div class="status-bar" id="status-bar">Sẵn Sàng</div>
       </div>
     </div>
 
     <script>
-      // 获取简洁的时间格式 (HH:MM) - 使用用户本地时区
+      // Lấy định dạng thời gian ngắn gọn (HH:MM) - sử dụng múi giờ địa phương
       function getSimpleTime() {
         return new Date().toLocaleTimeString(undefined, {
           hour: "2-digit",
@@ -1458,10 +1457,10 @@
         });
       }
 
-      // 跟踪当前活跃页面
-      let currentActivePage = "workbench"; // 默认为工作台页面
+      // Theo dõi trang đang hoạt động
+      let currentActivePage = "workbench"; // Mặc định là trang bảng điều khiển
 
-      // Tab 切换逻辑
+      // Logic chuyển tab
       const navBtns = document.querySelectorAll(".nav-btn");
       const pageWorkbench = document.getElementById("page-workbench");
       const pageConfig = document.getElementById("page-config");
@@ -1478,22 +1477,22 @@
             newPage = "config";
           }
 
-          // 如果从配置页面切换到工作台页面，自动保存配置
+          // Nếu chuyển từ trang cài đặt sang bảng điều khiển, tự động lưu cấu hình
           if (previousPage === "config" && newPage === "workbench") {
             console.log(
-              "从配置页面切换到工作台，自动保存配置... Switching from config page to workbench, auto-saving configuration..."
+              "Đang chuyển từ trang cài đặt sang bảng điều khiển, tự động lưu cấu hình..."
             );
             try {
-              await saveConfig(false, true); // 不显示成功提示，标记为自动保存
+              await saveConfig(false, true); // Không hiển thị thông báo thành công, đánh dấu là tự động lưu
             } catch (error) {
               console.error(
-                "自动保存配置失败 Auto-save configuration failed:",
+                "Lỗi tự động lưu cấu hình:",
                 error
               );
             }
           }
 
-          // 更新页面显示
+          // Cập nhật hiển thị trang
           navBtns.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
           currentActivePage = newPage;
@@ -1502,17 +1501,17 @@
           pageConfig.style.display = "none";
           pageLLMConfig.style.display = "none";
 
-          // 显示对应页面
+          // Hiển thị trang tương ứng
           if (btn.id === "nav-workbench") {
             pageWorkbench.style.display = "";
           } else if (btn.id === "nav-llm-config") {
             pageLLMConfig.style.display = "";
-            // 进入 LLM 页面时初始化建议下拉为空
+            // Khởi tạo dropdown gợi ý trống khi vào trang LLM
             const suggest = document.getElementById("llm-model-suggest");
             if (suggest) {
-              suggest.innerHTML = '<option value="">请选择或手动输入</option>';
+              suggest.innerHTML = '<option value="">Chọn hoặc nhập thủ công</option>';
             }
-            // 同步获取配置，确保 LLM 表单最新
+            // Đồng bộ lấy cấu hình, đảm bảo form LLM là mới nhất
             loadConfig();
           } else if (btn.id === "nav-config") {
             pageConfig.style.display = "";
@@ -1522,7 +1521,7 @@
       });
     </script>
     <script>
-      // 添加按钮点击动画效果
+      // Thêm hiệu ứng nhấn nút
       function addButtonClickEffect(button) {
         if (!button) return;
         button.addEventListener("click", function () {
@@ -1533,14 +1532,14 @@
         });
       }
 
-      // 供应商点击填充逻辑
+      // Logic điền thông tin nhà cung cấp khi nhấn
       function setProvider(baseUrl, models) {
         const baseInput = document.getElementById("llm-base-url");
         const modelInput = document.getElementById("llm-model");
         const suggest = document.getElementById("llm-model-suggest");
         if (baseInput) baseInput.value = baseUrl || "";
         if (suggest) {
-          suggest.innerHTML = '<option value="">请选择或手动输入</option>';
+          suggest.innerHTML = '<option value="">Chọn hoặc nhập thủ công</option>';
           (models || []).forEach((m) => {
             const opt = document.createElement("option");
             opt.value = m;
@@ -1556,7 +1555,7 @@
         }
       }
 
-      // 模型建议选择时同步到输入框
+      // Đồng bộ lựa chọn gợi ý mô hình vào ô nhập
       document.addEventListener("DOMContentLoaded", () => {
         const suggest = document.getElementById("llm-model-suggest");
         if (suggest) {
@@ -1568,7 +1567,7 @@
           });
         }
 
-        // 供应商卡片点击绑定
+        // Gắn sự kiện click thẻ nhà cung cấp
         const qwen = document.getElementById("provider-qwen");
         const openai = document.getElementById("provider-openai");
         const deepseek = document.getElementById("provider-deepseek");
@@ -1604,7 +1603,7 @@
         }
       });
 
-      // 加载配置数据
+      // Tải dữ liệu cấu hình
       async function loadConfig() {
         try {
           const response = await fetch("/api/config", {
@@ -1617,20 +1616,20 @@
             const result = await response.json();
             if (result.error === 0 && result.data) {
               populateConfigForm(result.data);
-              console.log("配置加载成功 Configuration loaded successfully");
+              console.log("Tải cấu hình thành công");
             }
           }
         } catch (error) {
           console.log(
-            "加载配置失败，使用默认配置 Failed to load configuration, using default config:",
+            "Tải cấu hình thất bại, sử dụng cấu hình mặc định:",
             error
           );
         }
       }
 
-      // 填充配置表单
+      // Điền dữ liệu vào form cấu hình
       function populateConfigForm(configData) {
-        // 应用配置
+        // Cấu hình ứng dụng
         if (configData.app) {
           document.getElementById("segment-duration").value =
             configData.app.segmentDuration || 5;
@@ -1647,7 +1646,7 @@
           document.getElementById("proxy").value = configData.app.proxy || "";
         }
 
-        // 服务器配置
+        // Cấu hình máy chủ
         if (configData.server) {
           document.getElementById("server-host").value =
             configData.server.host || "127.0.0.1";
@@ -1655,7 +1654,7 @@
             configData.server.port || 8888;
         }
 
-        // LLM配置
+        // Cấu hình LLM
         if (configData.llm) {
           document.getElementById("llm-base-url").value =
             configData.llm.baseUrl || "";
@@ -1663,14 +1662,14 @@
             configData.llm.apiKey || "";
           document.getElementById("llm-model").value =
             configData.llm.model || "gpt-3.5-turbo";
-          // 清空建议模型下拉
+          // Xóa dropdown gợi ý mô hình
           const suggest = document.getElementById("llm-model-suggest");
           if (suggest) {
-            suggest.innerHTML = '<option value="">请选择或手动输入</option>';
+            suggest.innerHTML = '<option value="">Chọn hoặc nhập thủ công</option>';
           }
         }
 
-        // 转录配置
+        // Cấu hình chuyển đổi giọng nói
         if (configData.transcribe) {
           document.getElementById("gpu-acceleration").value =
             configData.transcribe.enableGpuAcceleration === true
@@ -1718,7 +1717,7 @@
           }
         }
 
-        // TTS配置
+        // Cấu hình TTS
         if (configData.tts) {
           document.getElementById("tts-provider").value =
             configData.tts.provider || "openai";
@@ -1751,7 +1750,7 @@
         }
       }
 
-      // 收集配置表单数据的函数
+      // Hàm thu thập dữ liệu form cấu hình
       function collectConfigData() {
         return {
           app: {
@@ -1852,14 +1851,14 @@
         };
       }
 
-      // 保存配置的函数
+      // Hàm lưu cấu hình
       function saveConfig(showSuccessAlert = true, isAutoSave = false) {
         const configData = collectConfigData();
-        const statusPrefix = isAutoSave ? "自动保存 Auto-save" : "保存 Save";
+        const statusPrefix = isAutoSave ? "Tự động lưu" : "Lưu";
 
-        // 显示保存状态 Show save status
+        // Hiển thị trạng thái lưu
         document.getElementById("status-bar").textContent =
-          `正在${statusPrefix}配置... Saving configuration... - ` +
+          `Đang ${statusPrefix} cấu hình... - ` +
           getSimpleTime();
 
         return fetch("/api/config", {
@@ -1873,49 +1872,49 @@
             if (response.ok) {
               return response.json();
             }
-            throw new Error("网络请求失败");
+            throw new Error("Yêu cầu mạng thất bại");
           })
           .then((data) => {
-            // 检查业务错误码
+            // Kiểm tra mã lỗi nghiệp vụ
             if (data.error === 0) {
               if (showSuccessAlert) {
-                alert("配置已成功保存！ Configuration saved successfully!");
+                alert("Cấu hình đã được lưu thành công!");
               }
               document.getElementById("status-bar").textContent =
-                `配置已${statusPrefix} Configuration saved - ` +
+                `Cấu hình đã ${statusPrefix} - ` +
                 getSimpleTime();
               return true;
             } else {
-              // 显示后端返回的具体错误信息 Show specific error message from backend
+              // Hiển thị thông báo lỗi cụ thể từ backend
               const errorMsg =
-                data.msg || "保存配置失败 Failed to save configuration";
+                data.msg || "Lưu cấu hình thất bại";
               if (showSuccessAlert || !isAutoSave) {
                 alert(
-                  `${statusPrefix}配置失败 Configuration failed: ` + errorMsg
+                  `${statusPrefix} cấu hình thất bại: ` + errorMsg
                 );
               }
               document.getElementById("status-bar").textContent =
-                `配置${statusPrefix}失败 Configuration failed - ` +
+                `Cấu hình ${statusPrefix} thất bại - ` +
                 getSimpleTime();
-              console.error("配置验证失败:", data);
+              console.error("Xác thực cấu hình thất bại:", data);
               return false;
             }
           })
           .catch((error) => {
-            console.error("保存配置错误 Save configuration error:", error);
+            console.error("Lỗi lưu cấu hình:", error);
             if (showSuccessAlert || !isAutoSave) {
               alert(
-                `${statusPrefix}配置失败 Configuration failed: Network error or server exception`
+                `${statusPrefix} cấu hình thất bại: Lỗi mạng hoặc ngoại lệ máy chủ`
               );
             }
             document.getElementById("status-bar").textContent =
-              `配置${statusPrefix}失败 Configuration failed - ` +
+              `Cấu hình ${statusPrefix} thất bại - ` +
               getSimpleTime();
             return false;
           });
       }
 
-      // 配置页面逻辑
+      // Logic trang cài đặt
       const saveConfigButton = document.getElementById("saveConfigButton");
       if (saveConfigButton) {
         addButtonClickEffect(saveConfigButton);
@@ -1924,7 +1923,7 @@
         };
       }
 
-      // 表单交互逻辑
+      // Logic tương tác form
       const voiceoverToggleEl = document.getElementById("voiceover-toggle");
       if (voiceoverToggleEl) {
         voiceoverToggleEl.onchange = function () {
@@ -1957,7 +1956,7 @@
         };
       }
 
-      // 输入方式切换
+      // Chuyển đổi phương thức nhập
       document.querySelectorAll('input[name="inputType"]').forEach((radio) => {
         radio.addEventListener("change", () => {
           const urlContainer = document.getElementById("urlInputContainer");
@@ -2020,7 +2019,7 @@
       let uploadedVideoUrl = null;
       let uploadedAudioUrl = null;
 
-      // 更新状态（启用或禁用表单项） Update state (enable or disable form items)
+      // Cập nhật trạng thái (bật hoặc tắt các mục form)
       function updateFormState() {
         if (translationLanguage && translationToggle)
           translationLanguage.disabled = !translationToggle.checked;
@@ -2038,7 +2037,7 @@
           voiceFileInput.disabled = !voiceoverToggle.checked;
       }
 
-      // 提交表单参数
+      // Tham số gửi form
       function getParams() {
         const formData = {
           language: "zh_cn",
@@ -2096,11 +2095,11 @@
             formData.vertical_minor_title = verticalMinorTitle.value;
         }
 
-        console.log("表单数据:", formData);
+        console.log("Dữ liệu form:", formData);
         return formData;
       }
 
-      // 事件监听器
+      // Trình nghe sự kiện
       if (translationToggle) {
         translationToggle.addEventListener("change", () => {
           updateFormState();
@@ -2133,7 +2132,7 @@
         });
       }
 
-      // 处理视频上传
+      // Xử lý tải lên video
       if (fileInput) {
         fileInput.addEventListener("change", async () => {
           if (fileInput.files.length === 0) return;
@@ -2152,18 +2151,18 @@
               body: formData,
             });
             if (!response.ok)
-              throw new Error("视频上传失败 Video upload failed");
+              throw new Error("Tải lên video thất bại");
             const res = await response.json();
             const { error, data, msg } = res || {};
             if (error !== 0 && error !== 200) {
               throw new Error(
-                msg || "上传失败，请重试 Upload failed, please try again"
+                msg || "Tải lên thất bại, vui lòng thử lại"
               );
             }
             uploadedVideoUrl = data.file_path;
             if (executeButton) executeButton.disabled = false;
           } catch (error) {
-            console.error("视频上传失败 Video upload failed:", error);
+            console.error("Tải lên video thất bại:", error);
             alert(error);
           } finally {
             if (uploadStatus) uploadStatus.classList.add("hidden");
@@ -2171,7 +2170,7 @@
         });
       }
 
-      // 处理音频上传
+      // Xử lý tải lên âm thanh
       if (voiceFileInput) {
         voiceFileInput.addEventListener("change", async () => {
           if (voiceFileInput.files.length === 0) return;
@@ -2185,27 +2184,27 @@
               method: "POST",
               body: formData,
             });
-            if (!response.ok) throw new Error("上传失败 Upload failed");
+            if (!response.ok) throw new Error("Tải lên thất bại");
             const res = await response.json();
             const { error, data, msg } = res || {};
             if (error !== 0 && error !== 200) {
               throw new Error(
-                msg || "上传失败，请重试 Upload failed, please try again"
+                msg || "Tải lên thất bại, vui lòng thử lại"
               );
             }
             uploadedAudioUrl = data.file_path;
             console.log(
-              "音频上传成功 Audio upload successful:",
+              "Tải lên âm thanh thành công:",
               uploadedAudioUrl
             );
           } catch (error) {
-            console.error("音频上传失败 Audio upload failed:", error);
+            console.error("Tải lên âm thanh thất bại:", error);
             alert(error);
           }
         });
       }
 
-      // 请求启动任务接口
+      // Gửi yêu cầu khởi động tác vụ
       async function startTask(params) {
         try {
           const response = await fetch(API_SUBMIT_URL, {
@@ -2217,17 +2216,17 @@
           });
           const data = await response.json();
           if (+data.error !== 0 && +data.error !== 200) {
-            throw new Error(data.msg || "启动任务失败");
+            throw new Error(data.msg || "Khởi động tác vụ thất bại");
           }
           return (data.data || {}).task_id || "";
         } catch (error) {
           alert(error);
-          console.error("启动任务失败:", error);
+          console.error("Khởi động tác vụ thất bại:", error);
           return null;
         }
       }
 
-      // 轮询任务进度接口
+      // Polling tiến trình tác vụ
       async function pollTaskProgress(taskId) {
         try {
           let progress = 0;
@@ -2239,7 +2238,7 @@
             console.log("progress response---:", data);
             if (+data.error !== 0 && +data.error !== 200) {
               if (executeButton) executeButton.disabled = false;
-              throw new Error(data.msg || "查询进度失败");
+              throw new Error(data.msg || "Truy vấn tiến trình thất bại");
             }
             const responseData = data.data || {};
             progress = responseData.process_percent || 0;
@@ -2258,13 +2257,13 @@
                   : "none"
               );
               if (executeButton) executeButton.disabled = false;
-              // 显示output路径说明
+              // Hiển thị đường dẫn output
               if (downloadLinks) {
                 const tips = document.createElement("div");
                 tips.textContent =
-                  "若需要查看合成的视频或者文字稿，请到软件目录下的/tasks/" +
+                  "Nếu bạn muốn xem video tổng hợp hoặc bản ghi, vui lòng truy cập thư mục /tasks/" +
                   responseData.task_id +
-                  "/output 目录下查看。";
+                  "/output trong thư mục phần mềm.";
                 tips.style.marginTop = "10px";
                 tips.style.color = "#666";
                 tips.style.fontSize = "14px";
@@ -2277,25 +2276,25 @@
         } catch (error) {
           alert(error);
           if (executeButton) executeButton.disabled = false;
-          console.error("查询进度失败:", error);
+          console.error("Truy vấn tiến trình thất bại:", error);
         }
       }
 
-      // 显示下载链接
+      // Hiển thị liên kết tải xuống
       async function displayDownloadLinks(
         urls,
         speechUrl,
         taskId,
         embedSubtitleType
       ) {
-        console.log("下载链接:", urls);
-        console.log("嵌入字幕类型:", embedSubtitleType);
-        console.log("任务ID:", taskId);
+        console.log("Liên kết tải xuống:", urls);
+        console.log("Loại phụ đề nhúng:", embedSubtitleType);
+        console.log("ID tác vụ:", taskId);
         if (!downloadLinks) return;
 
         downloadLinks.innerHTML = "";
 
-        // 显示字幕下载链接
+        // Hiển thị liên kết tải xuống phụ đề
         urls.forEach(({ name, download_url }) => {
           const link = document.createElement("a");
           link.href = download_url;
@@ -2304,19 +2303,19 @@
           downloadLinks.appendChild(link);
         });
 
-        // 显示配音下载链接
+        // Hiển thị liên kết tải xuống lồng tiếng
         if (speechUrl) {
           const sArr = speechUrl.split("/");
           const sName = sArr[sArr.length - 1];
           const link = document.createElement("a");
           link.href = speechUrl;
           link.target = "_blank";
-          link.textContent = `配音：${sName}`;
+          link.textContent = `Lồng tiếng: ${sName}`;
           link.download = "";
           downloadLinks.appendChild(link);
         }
 
-        // 检查并显示嵌入字幕视频下载链接
+        // Kiểm tra và hiển thị liên kết tải xuống video có nhúng phụ đề
         if (taskId && embedSubtitleType && embedSubtitleType !== "none") {
           const checkAndAddVideoLink = async (
             videoType,
@@ -2337,9 +2336,9 @@
                 link.download = "";
                 downloadLinks.appendChild(link);
               } else {
-                // 文件不存在，添加提示信息
+                // Tệp không tồn tại, thêm thông báo gợi ý
                 const tip = document.createElement("div");
-                tip.textContent = `${displayName}： 生成的视频文件不存在，无法生成${videoType}视频`;
+                tip.textContent = `${displayName}: Tệp video được tạo không tồn tại, không thể tạo video ${videoType}`;
                 tip.style.color = "#FF0000";
                 tip.style.fontSize = "12px";
                 tip.style.marginTop = "4px";
@@ -2347,10 +2346,10 @@
                 downloadLinks.appendChild(tip);
               }
             } catch (error) {
-              console.error(`检查${fileName}文件失败:`, error);
-              // 发生错误时也添加提示信息
+              console.error(`Kiểm tra tệp ${fileName} thất bại:`, error);
+              // Cũng thêm thông báo khi xảy ra lỗi
               const tip = document.createElement("div");
-              tip.textContent = `${displayName}：文件检查失败`;
+              tip.textContent = `${displayName}: Kiểm tra tệp thất bại`;
               tip.style.color = "#FF0000";
               tip.style.fontSize = "12px";
               tip.style.marginTop = "4px";
@@ -2364,17 +2363,17 @@
             embedSubtitleType === "all"
           ) {
             await checkAndAddVideoLink(
-              "横屏",
+              "Ngang",
               "horizontal_embed.mp4",
-              "横屏视频：horizontal_embed.mp4"
+              "Video ngang: horizontal_embed.mp4"
             );
           }
 
           if (embedSubtitleType === "vertical" || embedSubtitleType === "all") {
             await checkAndAddVideoLink(
-              "竖屏",
+              "Dọc",
               "vertical_embed.mp4",
-              "竖屏视频：vertical_embed.mp4"
+              "Video dọc: vertical_embed.mp4"
             );
           }
         }
@@ -2382,36 +2381,36 @@
         downloadLinks.classList.remove("hidden");
       }
 
-      // 给执行按钮添加点击动画和事件监听器
+      // Thêm hiệu ứng nhấn và sự kiện cho nút thực thi
       if (executeButton) {
         addButtonClickEffect(executeButton);
 
         executeButton.addEventListener("click", async () => {
-          console.log("开始任务按钮被点击");
+          console.log("Nút bắt đầu tác vụ được nhấn");
 
-          // 更新状态栏
+          // Cập nhật thanh trạng thái
           const statusBar = document.getElementById("status-bar");
           if (statusBar) {
-            statusBar.textContent = "正在执行任务... - " + getSimpleTime();
+            statusBar.textContent = "Đang thực thi tác vụ... - " + getSimpleTime();
           }
 
-          // 检查双语字幕和视频合成的逻辑
+          // Kiểm tra logic phụ đề song ngữ và tổng hợp video
           if (
             bilingualToggle &&
             !bilingualToggle.checked &&
             embedSubtitleVideoTypeToggle &&
             embedSubtitleVideoTypeToggle.checked
           ) {
-            alert("合成字幕嵌入视频必须打开双语选项");
+            alert("Phải bật tùy chọn song ngữ để nhúng phụ đề vào video");
             return;
           }
 
-          // 检查视频URL是否存在
+          // Kiểm tra URL video có tồn tại không
           const inputType = document.querySelector(
             'input[name="inputType"]:checked'
           );
           if (!inputType) {
-            alert("请选择输入方式");
+            alert("Vui lòng chọn phương thức nhập");
             return;
           }
 
@@ -2419,26 +2418,26 @@
           if (inputType.value === "url") {
             url = urlInput ? urlInput.value.trim() : "";
             if (!url) {
-              alert("请输入视频链接");
+              alert("Vui lòng nhập liên kết video");
               return;
             }
           } else if (inputType.value === "file") {
             if (!uploadedVideoUrl) {
-              alert("请上传视频文件");
+              alert("Vui lòng tải lên tệp video");
               return;
             }
             url = uploadedVideoUrl;
           }
 
           if (!url) {
-            alert("请输入视频链接或上传视频文件");
+            alert("Vui lòng nhập liên kết video hoặc tải lên tệp video");
             return;
           }
 
           const params = getParams();
-          console.log("请求参数:", params);
+          console.log("Tham số yêu cầu:", params);
 
-          // 请求启动任务接口
+          // Gửi yêu cầu khởi động tác vụ
           if (Array.isArray(url)) {
             for (const singleUrl of url) {
               const taskId = await startTask({ ...params, url: singleUrl });
@@ -2459,13 +2458,13 @@
         });
       }
 
-      // 初始化时更新表单状态
+      // Cập nhật trạng thái form khi khởi tạo
       updateFormState();
 
-      // 页面加载完成后执行初始化
+      // Thực hiện khởi tạo sau khi trang tải xong
       document.addEventListener("DOMContentLoaded", function () {
-        console.log("页面加载完成，开始初始化配置");
-        // 如果当前在配置页面，则加载配置
+        console.log("Trang đã tải xong, bắt đầu khởi tạo cấu hình");
+        // Nếu hiện đang ở trang cài đặt, tải cấu hình
         const configPage = document.getElementById("page-config");
         if (configPage && configPage.style.display !== "none") {
           loadConfig();
