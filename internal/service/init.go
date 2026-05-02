@@ -55,7 +55,11 @@ func NewService() *Service {
 	case "aliyun":
 		ttsClient = aliyun.NewTtsClient(config.Conf.Tts.Aliyun.Speech.AccessKeyId, config.Conf.Tts.Aliyun.Speech.AccessKeySecret, config.Conf.Tts.Aliyun.Speech.AppKey)
 	case "edge-tts":
-		ttsClient = localtts.NewEdgeTtsClient()
+		ttsClient = localtts.NewEdgeTtsClientWithProsody(
+			config.Conf.Tts.EdgeTts.Rate,
+			config.Conf.Tts.EdgeTts.Pitch,
+			config.Conf.Tts.EdgeTts.Volume,
+		)
 	}
 
 	return &Service{

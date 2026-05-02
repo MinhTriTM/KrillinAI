@@ -43,7 +43,12 @@
             app_key= ""
 
 [tts]
-    provider = "aliyun" # 可选值：openai,aliyun,edge-tts
+    provider = "edge-tts" # 可选值：openai,aliyun,edge-tts,google
+    [tts.edge_tts]
+        voice = "vi-VN-HoaiMyNeural" # mặc định: Hoài My
+        rate = 0 # tốc độ (%), -100..100
+        pitch = 0 # cao độ (Hz), -100..100
+        volume = 0 # âm lượng (%), -100..100
     [tts.openai]
         base_url = ""
         api_key = ""

@@ -77,6 +77,14 @@ type Tts struct {
 	Provider string                 `toml:"provider"`
 	Openai   OpenaiCompatibleConfig `toml:"openai"`
 	Aliyun   AliyunTtsConfig        `toml:"aliyun"`
+	EdgeTts  EdgeTtsConfig          `toml:"edge_tts"`
+}
+
+type EdgeTtsConfig struct {
+	Voice  string  `toml:"voice"`
+	Rate   float64 `toml:"rate"`
+	Pitch  float64 `toml:"pitch"`
+	Volume float64 `toml:"volume"`
 }
 
 type OpenAiWhisper struct {
@@ -125,9 +133,15 @@ var Conf = Config{
 		},
 	},
 	Tts: Tts{
-		Provider: "openai",
+		Provider: "edge-tts",
 		Openai: OpenaiCompatibleConfig{
 			Model: "gpt-4o-mini-tts",
+		},
+		EdgeTts: EdgeTtsConfig{
+			Voice:  "vi-VN-HoaiMyNeural",
+			Rate:   0,
+			Pitch:  0,
+			Volume: 0,
 		},
 	},
 }

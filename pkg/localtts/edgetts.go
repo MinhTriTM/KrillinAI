@@ -16,10 +16,17 @@ import (
 )
 
 type EdgeTtsClient struct {
+	Rate   float64
+	Pitch  float64
+	Volume float64
 }
 
 func NewEdgeTtsClient() *EdgeTtsClient {
 	return &EdgeTtsClient{}
+}
+
+func NewEdgeTtsClientWithProsody(rate, pitch, volume float64) *EdgeTtsClient {
+	return &EdgeTtsClient{Rate: rate, Pitch: pitch, Volume: volume}
 }
 
 func (c *EdgeTtsClient) Text2Speech(text, voice, outputFile string) error {
@@ -103,6 +110,9 @@ func (c *EdgeTtsClient) attemptTTS(tempFileName, voice, absOutputFile string, at
 	cmdArgs := []string{
 		"--text-file", tempFileName,
 		"--voice", voice,
+		"--rate", fmt.Sprintf("%+d%%", int(c.Rate)),
+		"--pitch", fmt.Sprintf("%+dHz", int(c.Pitch)),
+		"--volume", fmt.Sprintf("%+d%%", int(c.Volume)),
 		"--output", absOutputFile,
 		"--format", "wav",
 		"--sample_rate", "44100",
